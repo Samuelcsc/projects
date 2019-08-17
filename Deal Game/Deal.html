@@ -1,0 +1,176 @@
+<! DOCTYPE html>
+<html>
+<head>
+<title>Deal Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="background-color: black; ">
+<h1 id="heading" id="primary" style="color: white; position: absolute; left:430px; font-family: sans-serif; font-size: 50px; top: -20px; width:50%" >Wanna Make a Deal?</h1>
+<pre id="subparagraph" style="color: white; text-align:center; position: absolute; top: 60px; left:390px; font-size: 20px; display: none; letter-spacing: 1px;">
+I opened the Orange Door which
+held a BAD THING! Now if you want to switch you can
+choose the Green Door
+or you can keep your first choice
+and open the Blue Door.</pre> 
+<pre id="subparagraph2" style="color: white; text-align:center; position: absolute; top: 60px; left:390px; font-size: 20px; display: none; letter-spacing: 1px;">
+I opened the Green Door which
+held a BAD THING! Now if you want to switch you can
+choose the Orange Door
+or you can keep your first choice
+and open the Blue Door.</pre> 
+<pre id="subparagraph3" style="color: white; text-align:center; position: absolute; top: 60px; left:390px; font-size: 20px; display: none; letter-spacing: 1px;">
+I opened the Blue Door which
+held a BAD THING! Now if you want to switch you can
+choose the Green Door
+or you can keep your first choice
+and open the Blue Door.</pre>
+<pre id="text-area" style="color: white; text-align:center; position: absolute; top: 70px; left:320px; font-size: 20px; letter-spacing: 1px;">
+There are three doors. Behind two doors there are BAD THINGS.
+Behind one door there is an AWESOME THING.
+Choose a door...
+</pre>
+
+<a href="#" id="bt5" class="button" ><img style="position: absolute; top: 230px; left:400px;" src="blue_door_fire.png" alt="blue_door_fire" width="130px" height="250px"></a>
+<a href="#" id="bt4" class="button" ><img style="position: absolute; top: 230px; left:600px;" src="orange_door_fire.png" alt="orange_door" width="130px" height="250px"></a>
+<a href="#" id="bt1" class="button" ><img style="position: absolute; top: 230px; left:400px;" src="blue_door.png" alt="blue_door" width="130px" height="250px"></a>
+<a href="#" id="bt2" class="button" ><img style="position: absolute; top: 230px; left:600px;" src="orange_door.png" alt="orange_door" width="130px" height="250px"></a>
+<a href="#" id="bt3" class="button" ><img style="position: absolute; top: 230px; left:800px;" src="green_door.png" alt="green_door" width="150px" height="250px"></a>
+
+<img id="win" width="400" height="310" src="tenor.gif" alt="tenor" style="display: none; position: absolute; left:470px; top: 150px;">
+
+<img id="lose" width="400" height="310" src="chucky.gif" alt="chucky" style="display: none; position: absolute; left:490px; top: 150px;">
+
+<script>
+let textArea = document.getElementById("text-area");
+let doorButton1 = document.getElementById("bt1");
+let doorButton2 = document.getElementById("bt2");
+let doorButton3 = document.getElementById("bt3");
+let doorButton4 = document.getElementById("bt4");
+let doorButton5 = document.getElementById("bt5");
+let topHeading = document.getElementById("heading");
+let subParagraph = document.getElementById("subparagraph");
+let subParagraph2 = document.getElementById("subparagraph2");
+let subParagraph3 = document.getElementById("subparagraph3");
+let winR = document.getElementById("win");
+let losR = document.getElementById("lose");
+
+doorButton1.addEventListener("click", mybluefunction); // First Click (Choosing Blue Door)
+function mybluefunction(){ 
+topHeading.innerText = "You Picked the Blue Door!"
+topHeading.style.left = "400px";
+textArea.style.display = "none"; 
+subParagraph.style.left = "400px";
+doorButton2.style.display = "none";
+subParagraph.style.display = "inline";
+
+doorButton1.addEventListener("click", mybluefunction); // Second Click (Choosing Blue Door Again)
+function mybluefunction(){ 
+topHeading.innerText = "YOU LOSE!";	
+topHeading.style.left = "550px";
+subParagraph.innerText = "Ouch! Too Bad. Here is your BAD THING!";
+subParagraph.style.left = "470px";
+doorButton1.style.display = "none";
+doorButton3.style.display = "none";
+doorButton4.style.display = "none";
+doorButton5.style.display = "none";
+losR.style.display = "inline";
+
+};
+
+doorButton3.addEventListener("click", mygreenfunction); // Second Click (Choosing Green Door)
+
+function mygreenfunction(){ 
+topHeading.innerText = "YOU WIN!";	
+topHeading.style.left = "550px";
+subParagraph.innerText = "Wehdone Sir! Here is your AWESOME THING!";
+subParagraph.style.left = "440px";
+doorButton1.style.display = "none";
+doorButton3.style.display = "none";
+doorButton4.style.display = "none";
+doorButton5.style.display = "none";
+winR.style.display = "inline";
+};
+
+};
+
+doorButton2.addEventListener("click", myorangefunction); // First Click Choosing Orange Door
+function myorangefunction(){ 
+topHeading.innerText = "You Picked the Orange Door!"
+topHeading.style.left = "400px";
+textArea.style.display = "none"; 
+subParagraph3.style.left = "400px";
+doorButton1.style.display = "none";
+subParagraph3.style.display = "inline";
+
+doorButton2.addEventListener("click", myorangefunction); // Second Click (Choosing Orange Door Again)
+function myorangefunction(){ 
+topHeading.innerText = "YOU LOSE!";	
+topHeading.style.left = "550px";
+subParagraph3.innerText = "Ouch! Too Bad. Here is your BAD THING!";
+subParagraph3.style.left = "470px";
+doorButton2.style.display = "none";
+doorButton3.style.display = "none";
+doorButton4.style.display = "none";
+doorButton5.style.display = "none";
+losR.style.display = "inline";
+};
+
+doorButton3.addEventListener("click", mygreenfunction); //Second Click (Choosing Green Door)
+
+function mygreenfunction(){ 
+topHeading.innerText = "YOU WIN!";	
+topHeading.style.left = "570px";
+subParagraph3.innerText = "Wehdone Sir! Here is your AWESOME THING!";
+subParagraph3.style.left = "490px";
+subParagraph.style.display = "none";
+doorButton2.style.display = "none";
+doorButton3.style.display = "none";
+doorButton4.style.display = "none";
+doorButton5.style.display = "none";
+winR.style.display = "inline";
+};
+
+};
+
+doorButton3.addEventListener("click", mygreenfunction); // First Click (Choosing Green Door)
+function mygreenfunction(){ 
+textArea.style.display = "none"; 
+topHeading.innerText = "You Picked the Green Door!"
+topHeading.style.left = "400px";
+textArea.style.display = "none"; 
+subParagraph.style.left = "400px";
+doorButton2.style.display = "none";
+subParagraph.style.display = "inline";
+
+doorButton3.addEventListener("click", mygreenfunction); // Second Click (Choosing Green Door Again)
+function mygreenfunction(){ 
+topHeading.innerText = "YOU WIN!";	
+topHeading.style.left = "540px";
+subParagraph.innerText = "Wehdone Sir! Here is your AWESOME THING!";
+subParagraph.style.left = "440px";
+doorButton1.style.display = "none";
+doorButton3.style.display = "none";
+doorButton4.style.display = "none";
+doorButton5.style.display = "none";
+winR.style.display = "inline";
+};
+
+doorButton1.addEventListener("click", mybluefunction); // Second Click (Choosing Blue Door)
+function mybluefunction(){   
+topHeading.innerText = "YOU LOSE!";	
+topHeading.style.left = "550px";
+subParagraph.innerText = "Ouch! Too Bad. Here is your BAD THING!";
+subParagraph.style.left = "470px";
+doorButton1.style.display = "none";
+doorButton3.style.display = "none";
+doorButton4.style.display = "none";
+doorButton5.style.display = "none";
+losR.style.display = "inline";
+
+};
+
+};
+</script>
+
+</body>
+</html> 
